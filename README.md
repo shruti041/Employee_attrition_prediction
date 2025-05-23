@@ -28,7 +28,8 @@ To assess performance, we used the following metrics:
 - **Recall**
 - **F1-Score**
 ### 🏆Best Model Selection
-After the evaluation, it was determined that the **gradient boosting algorithm** performed the best. > 🎯 **Accuracy: 89.12%** <br>
+After the evaluation, it was determined that the **gradient boosting algorithm** performed the best. 
+> 🎯 **Accuracy: 89.12%** <br>
 So we trained the [model](https://github.com/shruti041/HR_ANALYTICS_FOR_EMPLOYEE_ATTRITION_PREDICTION/blob/main/Gradient_Boosting.py) and save the model and label encoders. <br>
 ### 🧪Simulation Environment
 - **IDE**: Visual Studio Code (VSCode) for development and debugging.
