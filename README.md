@@ -22,13 +22,11 @@ We implemented and compared a range of machine learning models, including:
 
 Each model was trained on the same dataset and tested using consistent evaluation metrics.
 ## 📈 Model Evaluation
-Models are evaluated using key metrics:
+To assess performance, we used the following metrics:
 - **Accuracy**
 - **Precision**
 - **Recall**
-- **F1-Score** 
-<br>Below is the table for the same:
-![Sorry! .png file is also added you can check]("https://github.com/shruti041/HR_ANALYTICS_FOR_EMPLOYEE_ATTRITION_PREDICTION/blob/main/Screenshot%202025-05-20%20231245.png")
+- **F1-Score**
 ### 🏆Best Model Selection
 After the evaluation, it was determined that the **gradient boosting algorithm** performed the best. > 🎯 **Accuracy: 89.12%** <br>
 So we trained the [model](https://github.com/shruti041/HR_ANALYTICS_FOR_EMPLOYEE_ATTRITION_PREDICTION/blob/main/Gradient_Boosting.py) and save the model and label encoders. <br>
