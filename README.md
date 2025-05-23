@@ -9,4 +9,4 @@ The data for the project is sourced from Kaggle and is made available to everyon
 ### Model Development
 We applied a range of machine learning algorithms and observed which did the best job in predicting. 
 Below is the table for the same:
-![Sorry!]("")
+![Sorry!]("https://github.com/shruti041/HR_ANALYTICS_FOR_EMPLOYEE_ATTRITION_PREDICTION/blob/main/Screenshot%202025-05-20%20231245.png")
