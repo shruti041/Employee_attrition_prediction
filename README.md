@@ -18,3 +18,5 @@ So we trained the [model](https://github.com/shruti041/HR_ANALYTICS_FOR_EMPLOYEE
 ### Simulation Environment
 VSCode for Python writing, debugging and handling the code. <br>
 To make the frontend user-friendly, Streamlit was decided upon for its ease of use. With Streamlit, it became easy to develop machine learning models and release them quickly, allowing users to analyze their data, find information and test results with no trouble. [Streamlit_code](https://github.com/shruti041/HR_ANALYTICS_FOR_EMPLOYEE_ATTRITION_PREDICTION/blob/main/Final_app.py).
+## Why Gradient Boosting tends to perform well?
+Gradient Boosting often performs better in employee attrition prediction because it is capable of modeling non-linear, complex relationships, handles imbalanced data relatively well, and focuses on learning from previous mistakes, which helps capture the nuances in attrition behavior.
