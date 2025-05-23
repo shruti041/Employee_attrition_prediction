@@ -1,22 +1,28 @@
-# HR ANALYTICS FOR EMPLOYEE ATTRITION PREDICTION
-### Introduction:
+# 💼HR ANALYTICS FOR EMPLOYEE ATTRITION PREDICTION
+### 📘Introduction:
 HR Analytics leverages data-driven insights to improve workforce management. One critical application is predicting employee attrition—understanding why employees leave and identifying those at risk of leaving. This helps organizations retain talent, reduce turnover costs, and enhance productivity.
-### Problem Statement:
+### ❓Problem Statement:
 The goal is to develop a predictive model using employee data to identify individuals likely to leave the organization. By analyzing factors like job role, satisfaction, workload, and compensation, HR teams can take proactive steps to improve retention.
-### Data Acquisition
-The data for the project is sourced from Kaggle and is made available to everyone. This information includes 1,470 records, each containing 35 details regarding employees. Dataset is added already, link is also provided here [Dataset](https://www.kaggle.com/datasets/pavansubhasht/ibm-hr-analytics-attrition-dataset) .
-#### After this we preprocess the dataset. 
-### Model Development
+### 📊Data Acquisition
+The data for the project is sourced from Kaggle and is made available to everyone. This information includes **1,470 records**, each containing **35 details** regarding employees. <br> 
+> ✅ The dataset is already included in the repository.[Dataset](https://www.kaggle.com/datasets/pavansubhasht/ibm-hr-analytics-attrition-dataset) .
+### 🔄 Preprocessing
+The dataset is preprocessed to handle missing values, encode categorical features, and scale numerical values.
+### 🤖Model Development
 We applied a range of machine learning algorithms and observed which did the best job in predicting. 
-### Model Evaluation
-To assess the accuracy of each model, we tested them on new information and used several methods for evaluating their results. Evaluation metrics like accuracy, precision, recall, and F1-score are used to assess model performance.<br>
-Below is the table for the same:
+## 📈 Model Evaluation
+Models are evaluated using key metrics:
+- **Accuracy**
+- **Precision**
+- **Recall**
+- **F1-Score** 
+<br>Below is the table for the same:
 ![Sorry! .png file is also added you can check]("https://github.com/shruti041/HR_ANALYTICS_FOR_EMPLOYEE_ATTRITION_PREDICTION/blob/main/Screenshot%202025-05-20%20231245.png")
-### Best Model Selection
-After the evaluation, it was determined that the gradient boosting algorithm performed the best, with an accuracy of 89.12%. <br>
+### 🏆Best Model Selection
+After the evaluation, it was determined that the **gradient boosting algorithm** performed the best. > 🎯 **Accuracy: 89.12%** <br>
 So we trained the [model](https://github.com/shruti041/HR_ANALYTICS_FOR_EMPLOYEE_ATTRITION_PREDICTION/blob/main/Gradient_Boosting.py) and save the model and label encoders. <br>
-### Simulation Environment
-VSCode for Python writing, debugging and handling the code. <br>
-To make the frontend user-friendly, Streamlit was decided upon for its ease of use. With Streamlit, it became easy to develop machine learning models and release them quickly, allowing users to analyze their data, find information and test results with no trouble. [Streamlit_code](https://github.com/shruti041/HR_ANALYTICS_FOR_EMPLOYEE_ATTRITION_PREDICTION/blob/main/Final_app.py).
-## Why Gradient Boosting tends to perform well?
+### 🧪Simulation Environment
+- **IDE**: Visual Studio Code (VSCode) for development and debugging.
+- **Frontend**: Built using **Streamlit** for its simplicity and fast deployment.[Streamlit_code](https://github.com/shruti041/HR_ANALYTICS_FOR_EMPLOYEE_ATTRITION_PREDICTION/blob/main/Final_app.py).
+## ❔Why Gradient Boosting tends to perform well?
 Gradient Boosting often performs better in employee attrition prediction because it is capable of modeling non-linear, complex relationships, handles imbalanced data relatively well, and focuses on learning from previous mistakes, which helps capture the nuances in attrition behavior.
