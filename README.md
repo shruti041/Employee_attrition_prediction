@@ -9,7 +9,18 @@ The data for the project is sourced from Kaggle and is made available to everyon
 ### 🔄 Preprocessing
 The dataset is preprocessed to handle missing values, encode categorical features, and scale numerical values.
 ### 🤖Model Development
-We applied a range of machine learning algorithms and observed which did the best job in predicting. 
+We implemented and compared a range of machine learning models, including:
+- **Logistic Regression**
+- **Decision Tree**
+- **Random Forest**
+- **Support Vector Machine (SVM)**
+- **XGBoost**
+- **LightGBM**
+- **CatBoost**
+- **AdaBoost**
+- **Gradient Boosting**
+
+Each model was trained on the same dataset and tested using consistent evaluation metrics.
 ## 📈 Model Evaluation
 Models are evaluated using key metrics:
 - **Accuracy**
