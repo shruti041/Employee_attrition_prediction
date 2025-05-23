@@ -5,7 +5,7 @@ HR Analytics leverages data-driven insights to improve workforce management. One
 The goal is to develop a predictive model using employee data to identify individuals likely to leave the organization. By analyzing factors like job role, satisfaction, workload, and compensation, HR teams can take proactive steps to improve retention.
 ### 📊Data Acquisition
 The data for the project is sourced from Kaggle and is made available to everyone. This information includes **1,470 records**, each containing **35 details** regarding employees. <br> 
-> ✅ The dataset is already included in the repository.[Dataset](https://www.kaggle.com/datasets/pavansubhasht/ibm-hr-analytics-attrition-dataset) .
+> ✅ The dataset is already included in the repository.[Dataset](https://github.com/shruti041/HR_ANALYTICS_FOR_EMPLOYEE_ATTRITION_PREDICTION/blob/main/HR-Employee-Attrition.csv) .
 ### 🔄 Preprocessing
 The dataset is preprocessed to handle missing values, encode categorical features, and scale numerical values.
 ### 🤖Model Development
