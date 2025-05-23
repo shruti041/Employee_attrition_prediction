@@ -12,3 +12,5 @@ We applied a range of machine learning algorithms and observed which did the bes
 To assess the accuracy of each model, we tested them on new information and used several methods for evaluating their results. Evaluation metrics like accuracy, precision, recall, and F1-score are used to assess model performance.<br>
 Below is the table for the same:
 ![Sorry! .png file is also added you can check]("https://github.com/shruti041/HR_ANALYTICS_FOR_EMPLOYEE_ATTRITION_PREDICTION/blob/main/Screenshot%202025-05-20%20231245.png")
+### Best Model Selection
+After the evaluation, it was determined that the gradient boosting algorithm performed the best, with an accuracy of 89.12%. <br>
