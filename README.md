@@ -34,5 +34,8 @@ So we trained the [model](https://github.com/shruti041/HR_ANALYTICS_FOR_EMPLOYEE
 ### 🧪Simulation Environment
 - **IDE**: Visual Studio Code (VSCode) for development and debugging.
 - **Frontend**: Built using **Streamlit** for its simplicity and fast deployment.[Streamlit_code](https://github.com/shruti041/HR_ANALYTICS_FOR_EMPLOYEE_ATTRITION_PREDICTION/blob/main/Final_app.py).
+### 🛠️ Retention Recommendations (App Feature)
+<br> One of the standout features of this application is the personalized recommendation system that activates when an employee is predicted to be at high risk of attrition.
+<br>Based on key input indicators, the app provides specific, actionable suggestions that HR teams can use to proactively retain employees. These recommendations are dynamically generated and tailored to the individual's profile.
 ## ❔Why Gradient Boosting tends to perform well?
 Gradient Boosting often performs better in employee attrition prediction because it is capable of modeling non-linear, complex relationships, handles imbalanced data relatively well, and focuses on learning from previous mistakes, which helps capture the nuances in attrition behavior.
