@@ -6,7 +6,7 @@ from sklearn.metrics import accuracy_score, classification_report
 import joblib
 
 # Load your dataset
-data = pd.read_csv("C:\\Users\\INSPIRON\\Desktop\\project\\dataset\\HR-Employee-Attrition.csv")  
+data = pd.read_csv("HR-Employee-Attrition.csv")  
 
 # Drop unnecessary columns
 df = data.copy()

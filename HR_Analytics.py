@@ -1,7 +1,7 @@
 import numpy as np
 import pandas as pd
 
-data=pd.read_csv('C:\\Users\\INSPIRON\\Desktop\\project\\dataset\\HR-Employee-Attrition.csv')
+data=pd.read_csv('HR-Employee-Attrition.csv')
 #print(data.head())
 
 #print(data.dtypes)
