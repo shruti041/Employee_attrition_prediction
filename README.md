@@ -3,6 +3,8 @@
 
 🌐 **Live app:** [attritionpredict.streamlit.app](https://attritionpredict.streamlit.app/). Try it with the built-in sample data, no setup needed.
 
+> 💤 The app is hosted on Streamlit's free plan, so it goes to sleep after a while without visitors. If you see "This app has gone to sleep", click **"Yes, get this app back up!"** and it will be ready in about a minute.
+
 ### 📸 Screenshots
 **Team page:** upload your HR data and every employee is scored and ranked by risk.
 
