@@ -3,15 +3,30 @@
 
 🌐 **Live app:** [attritionpredict.streamlit.app](https://attritionpredict.streamlit.app/). Try it with the built-in sample data, no setup needed.
 
+### 📸 Screenshots
+**Team page:** upload your HR data and every employee is scored and ranked by risk.
+
+![Team page with every employee ranked by chance of leaving](screenshots/team.png)
+
+**Individual employee:** HR enters the employee's survey answers and gets the prediction, what drove it, and retention recommendations.
+
+| Light theme | Dark theme |
+|---|---|
+| ![Individual employee page in the light theme](screenshots/employee.png) | ![Individual employee page in the dark theme](screenshots/employee-dark.png) |
+
+**On a phone:** the layout stacks into a single column.
+
+<img src="screenshots/mobile.png" alt="Individual employee page and result on a phone" width="600">
+
 ### 📘Introduction:
 HR Analytics leverages data-driven insights to improve workforce management. One critical application is predicting employee attrition—understanding why employees leave and identifying those at risk of leaving. This helps organizations retain talent, reduce turnover costs, and enhance productivity.
 ### ❓Problem Statement:
 The goal is to develop a predictive model using employee data to identify individuals likely to leave the organization. By analyzing factors like job role, satisfaction, workload, and compensation, HR teams can take proactive steps to improve retention.
 ### 📊Data Acquisition
 The data for the project is sourced from Kaggle and is made available to everyone. This information includes **1,470 records**, each containing **35 details** regarding employees. <br> 
-> ✅ The dataset is already included in the repository.[Dataset](https://github.com/shruti041/HR_ANALYTICS_FOR_EMPLOYEE_ATTRITION_PREDICTION/blob/main/HR-Employee-Attrition.csv) .
+> ✅ The dataset is already included in the repository: [HR-Employee-Attrition.csv](HR-Employee-Attrition.csv).
 ### 🔄 Preprocessing
-The dataset is preprocessed to handle missing values, encode categorical features, and scale numerical values.
+The dataset has no missing values. Columns that are the same for every employee (EmployeeCount, Over18, StandardHours) and the EmployeeNumber ID are dropped. Categorical features are one-hot encoded and numeric features are scaled, inside a single scikit-learn pipeline, so the app applies exactly the same steps to new data.
 ### 🤖Model Development
 We implemented and compared a range of machine learning models, including:
 - **Logistic Regression**
@@ -64,7 +79,20 @@ streamlit run final_app.py
 ```
 ### 🧪Simulation Environment
 - **IDE**: Visual Studio Code (VSCode) for development and debugging.
-- **Frontend**: Built using **Streamlit** for its simplicity and fast deployment.[Streamlit_code](final_app.py).
+- **Frontend**: Built using **Streamlit** for its simplicity and fast deployment: [final_app.py](final_app.py). Deployed on Streamlit Community Cloud.
+### 📁 Project Structure
+| File | Purpose |
+|---|---|
+| [final_app.py](final_app.py) | The Streamlit app (Team and Individual employee pages) |
+| [train_model.py](train_model.py) | Trains the final model and saves it to `attrition_model.pkl` |
+| `attrition_model.pkl` | The trained pipeline used by the app |
+| [accuracy_ceiling.py](accuracy_ceiling.py) | Reproduces the "Why not 95%+" results |
+| [HR_Analytics.py](HR_Analytics.py) | Exploratory data analysis charts |
+| [Gradient_Boosting.py](Gradient_Boosting.py) | The previous Gradient Boosting model, kept for comparison |
+| [HR-Employee-Attrition.csv](HR-Employee-Attrition.csv) | The IBM HR dataset |
+| [.streamlit/config.toml](.streamlit/config.toml) | Light and dark theme colours and fonts |
+| `requirements.txt` / `requirements-dev.txt` | Packages for the app / for the analysis scripts |
+| `screenshots/` | Images used in this README |
 ### 🛠️ App Features
 The app has two pages, used in this order:
 
