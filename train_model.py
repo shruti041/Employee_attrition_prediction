@@ -6,6 +6,7 @@ from nothing, repeatedly add the question that most improves cross-validated
 log-loss. Beyond ~16 questions, each extra one adds almost no accuracy.
 """
 import joblib
+import numpy as np
 import pandas as pd
 from sklearn.compose import ColumnTransformer
 from sklearn.linear_model import LogisticRegression
@@ -23,6 +24,11 @@ NUMERIC = [
     "YearsInCurrentRole", "YearsWithCurrManager", "YearsSinceLastPromotion",
 ]
 FEATURES = CATEGORICAL + NUMERIC
+
+# Answers that come from the engagement survey. HR may not have them for
+# everyone, so the app fills a missing answer with the most common one.
+SURVEY = ["JobSatisfaction", "EnvironmentSatisfaction", "RelationshipSatisfaction",
+          "JobInvolvement", "WorkLifeBalance"]
 
 data = pd.read_csv("HR-Employee-Attrition.csv")
 X = data[FEATURES]
@@ -69,9 +75,19 @@ print("Classification report:\n", classification_report(y_test, y_pred))
 
 # 4. Train the final model on all the data and save it with its metadata.
 final_model = build_pipeline(best_C).fit(X, y)
+
+# The average employee in model space. Because the model is linear,
+# coefficient x (employee - average) shows exactly how much each answer
+# pushed this employee's risk up or down; the app uses it to explain results.
+encoded = final_model.named_steps["preprocess"].transform(X)
+baseline = np.asarray(encoded.mean(axis=0)).ravel()
+
 joblib.dump({
     "model": final_model,
     "features": FEATURES,
+    "categorical": CATEGORICAL,
+    "survey_defaults": {col: int(X[col].mode()[0]) for col in SURVEY},
+    "baseline": baseline,
     "cv_accuracy": cv_accuracy,
     "split_accuracy": split_accuracy,
 }, "attrition_model.pkl")

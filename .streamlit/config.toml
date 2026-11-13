@@ -1,0 +1,34 @@
+# Theme for both modes. Viewers switch between them in the app menu
+# (top right: Settings > Choose app theme); by default the app follows the
+# device's light/dark setting.
+
+[theme]
+font = "Inter:https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap, sans-serif"
+headingFont = "'Space Grotesk':https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600&display=swap, sans-serif"
+headingFontWeights = 600
+baseRadius = "12px"
+buttonRadius = "12px"
+showWidgetBorder = true
+
+[theme.light]
+primaryColor = "#4338CA"
+backgroundColor = "#F5F6FA"
+secondaryBackgroundColor = "#EEF0F6"
+textColor = "#151A2D"
+borderColor = "#E2E5EE"
+linkColor = "#3730A3"
+orangeColor = "#C2410C"
+greenColor = "#0F766E"
+dataframeHeaderBackgroundColor = "#EEF0F6"
+
+[theme.dark]
+# A deeper indigo than the mockup's lavender, so white button text stays readable (5:1).
+primaryColor = "#5B5EE8"
+backgroundColor = "#0D1117"
+secondaryBackgroundColor = "#1C2333"
+textColor = "#E7EAF3"
+borderColor = "#272F42"
+linkColor = "#A5A8FF"
+orangeColor = "#FB923C"
+greenColor = "#2DD4BF"
+dataframeHeaderBackgroundColor = "#1C2333"

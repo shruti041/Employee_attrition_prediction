@@ -1,4 +1,8 @@
 # 💼HR ANALYTICS FOR EMPLOYEE ATTRITION PREDICTION
+[![Open in Streamlit](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://attritionpredict.streamlit.app/)
+
+🌐 **Live app:** [attritionpredict.streamlit.app](https://attritionpredict.streamlit.app/). Try it with the built-in sample data, no setup needed.
+
 ### 📘Introduction:
 HR Analytics leverages data-driven insights to improve workforce management. One critical application is predicting employee attrition—understanding why employees leave and identifying those at risk of leaving. This helps organizations retain talent, reduce turnover costs, and enhance productivity.
 ### ❓Problem Statement:
@@ -50,6 +54,7 @@ Noise columns such as Daily Rate, Hourly Rate and Monthly Rate were never select
 
 The training code is in [train_model.py](train_model.py), which saves the full pipeline (encoding, scaling and model) to `attrition_model.pkl`.
 ### 🚀 How to Run
+Use the [live app](https://attritionpredict.streamlit.app/), or run it on your own computer:
 ```bash
 python -m venv .venv
 .venv\Scripts\activate            # Windows (macOS/Linux: source .venv/bin/activate)
@@ -60,9 +65,25 @@ streamlit run final_app.py
 ### 🧪Simulation Environment
 - **IDE**: Visual Studio Code (VSCode) for development and debugging.
 - **Frontend**: Built using **Streamlit** for its simplicity and fast deployment.[Streamlit_code](final_app.py).
-### 🛠️ Retention Recommendations (App Feature)
-One of the standout features of this application is the personalized recommendation system that activates when an employee is predicted to be at high risk of attrition.
-<br>Based on key input indicators, the app provides specific, actionable suggestions that HR teams can use to proactively retain employees. These recommendations are dynamically generated and tailored to the individual's profile.
+### 🛠️ App Features
+The app has two pages, used in this order:
+
+1. **Team** (the first page): upload a CSV exported from your HR system (a template is provided, and sample data is available to try). Every employee is scored and ranked by risk, with summary counts of high-risk, watch and low-risk employees, each person's key risk signals, and how many of their survey answers are known. Results can be downloaded as a CSV.
+2. **Individual employee:** select someone in the Team table to open their assessment.
+   - Their **HR records** (profile and career history) come from the file and sit in a collapsed, locked section, with a switch to correct a value if needed. The page opens on the part HR has to fill in.
+   - HR enters **the employee's own answers** to the 5 satisfaction and engagement questions, copied from the engagement survey or asked in a check-in conversation. The employee never uses the app. Each question shows whether its answer is *Not in file*, *From file*, *Entered* or *No answer*, and an "Answers entered" bar tracks progress.
+   - **Predict** shows the chance of leaving as an animated risk ring, compared with the employee's previous score in the Team table, plus **what drove the result** (the model is linear, so the app can show exactly which answers raised or lowered the risk compared with an average employee) and **retention recommendations** for high-risk employees.
+   - The new score is saved back to the Team table, marked "Updated by HR", and a confirmation pops up. If HR changes an answer afterwards, the result is marked as out of date until they predict again. **Clear answers** undoes everything entered for that employee.
+
+Before any data is uploaded, the Individual page works on its own as a blank form, for a quick one-off check.
+
+**Where the answers come from:** 11 of the 16 questions come from standard HR records. The 5 satisfaction and engagement questions come from an engagement survey, and the app shows the exact survey question for each. If the employee didn't answer a question, HR can tick **No answer from the employee**: the app fills in the most common answer and warns that the result is less certain. It also flags survey answers that are over a year old.
+
+**Using the model with another company's data:** the model learned its patterns from the IBM HR dataset (16% attrition, 9 job roles, a 1–4 survey scale). Another organisation's reasons for leaving, attrition rate, roles or survey scale may differ, so its predictions should be treated with care. For best results, retrain on that company's own history by running `train_model.py` on a CSV with the same columns plus an `Attrition` (Yes/No) column.
+
+**Responsible use:** the app reminds HR to only use surveys employees know are confidential (not anonymous), and that predictions are for supporting employees, never for penalising them.
+
+**Design:** separate light and dark themes, which follow the device setting by default and can be changed in the app menu (Settings › Choose app theme). The layout stacks into a single column on phones, and the animations turn off for users who have reduced motion enabled on their device.
 ## ❔Why does Logistic Regression beat Gradient Boosting here?
 With only 1,470 employees, of whom just 237 left, there isn't enough data for tree ensembles to learn complex interactions without overfitting. The main attrition drivers (overtime, low satisfaction, short tenure, being single, frequent travel) each push the risk up or down fairly steadily, which is exactly the pattern Logistic Regression models well. One-hot encoding also lets it learn a separate effect for each job role, instead of treating the label-encoded roles as an ordered number. As a bonus, Logistic Regression is fast and its predictions are easy to explain to HR.
 
